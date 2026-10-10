@@ -1,0 +1,7 @@
+.git
+data
+models
+results
+outputs
+notebooks
+**/__pycache__

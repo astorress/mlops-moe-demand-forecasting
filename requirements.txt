@@ -1,0 +1,42 @@
+# Versiones fijas para reproducir el pipeline (validadas en Docker, Python 3.12, CPU).
+# PyTorch se instala desde el índice CPU: --extra-index-url https://download.pytorch.org/whl/cpu
+
+# Procesamiento de datos
+pandas==2.2.2
+numpy==2.0.2
+pyarrow==26.0.0
+
+# Machine Learning
+scikit-learn==1.6.1
+xgboost==3.2.0
+lightgbm==4.6.0
+statsmodels==0.14.6
+scikit-optimize==0.10.2
+tslearn==0.9.0
+
+# Deep Learning (expertos LSTM/GRU y benchmark)
+torch==2.14.1
+
+# Benchmark (notebook 09)
+prophet==1.5.0
+shap==0.53.0
+umap-learn==0.5.12
+
+# Series temporales y calendario
+scipy==1.16.3
+holidays==0.106
+
+# Visualización
+matplotlib==3.10.0
+seaborn==0.13.2
+plotly==7.1.0
+
+# Utilidades
+requests==2.34.2
+tqdm==4.70.1
+joblib==1.6.0
+
+# Jupyter y ejecución de notebooks
+jupyterlab==4.6.4
+ipykernel==7.4.0
+papermill==2.7.0

@@ -1,0 +1,115 @@
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# =====================================================
+# DATA FOLDERS (se regeneran con notebooks)
+# Ignora archivos pero mantiene carpetas con .gitkeep
+# =====================================================
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/classifiers/*
+!data/classifiers/.gitkeep
+data/clustering/*
+!data/clustering/.gitkeep
+
+# =====================================================
+# MODELS FOLDERS (se entrenan con notebooks)
+# Ignora archivos pero mantiene carpetas con .gitkeep
+# =====================================================
+models/classifiers/*
+!models/classifiers/.gitkeep
+models/experts/*
+!models/experts/.gitkeep
+models/gating/*
+!models/gating/.gitkeep
+models/hyperparameters/*
+!models/hyperparameters/.gitkeep
+models/production/*
+!models/production/.gitkeep
+models/production/experts/*
+!models/production/experts/.gitkeep
+
+# =====================================================
+# RESULTS FOLDERS (se generan en ejecución)
+# Ignora archivos pero mantiene carpetas con .gitkeep
+# =====================================================
+results/*
+!results/.gitkeep
+!results/benchmark/
+results/benchmark/*
+!results/benchmark/.gitkeep
+
+# Tipos de archivo específicos a ignorar
+*.parquet
+*.pkl
+*.joblib
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.csv
+*.tmp
+
+# Logs
+*.log
+logs/
+
+# Configuración local
+.env
+.env.local
+config.local.py
+
+# Cachés
+.cache/
+*.cache
+
+# Coverage
+.coverage
+htmlcov/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Notebooks ejecutados por make pipeline / make nb
+outputs/

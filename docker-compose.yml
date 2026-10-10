@@ -1,0 +1,35 @@
+# =============================================================================
+# MoE Demand Forecasting - entorno de notebooks
+# Uso: make up (JupyterLab en http://localhost:8888) · make pipeline (ejecuta todo)
+# =============================================================================
+
+x-app: &app
+  build:
+    context: .
+    dockerfile: docker/Dockerfile
+  image: mlops-moe-demand-forecasting:latest
+  working_dir: /app/notebooks
+  volumes:
+    - .:/app
+
+services:
+  # JupyterLab para explorar y ejecutar los notebooks
+  jupyter:
+    <<: *app
+    container_name: moe-jupyter
+    ports:
+      - "${JUPYTER_PORT:-8888}:8888"
+    command: >
+      jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+        --ServerApp.token='' --ServerApp.password='' --notebook-dir=/app
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8888/api')"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+    restart: unless-stopped
+
+  # Contenedor de ejecución (perfil "tools"): lo usan make pipeline / make nb
+  runner:
+    <<: *app
+    profiles: ["tools"]
