@@ -64,9 +64,9 @@ class MoEForecaster:
         if isinstance(X, pd.DataFrame):
             available = [c for c in self.clf_feature_cols if c in X.columns]
             if len(available) < len(self.clf_feature_cols):
-                return X[self.feature_cols].values  # fallback
+                return X[self.feature_cols].values
             return X[available].values
-        return X  # si ya es ndarray, usar directo
+        return X
 
     def predict(self, X):
         """
